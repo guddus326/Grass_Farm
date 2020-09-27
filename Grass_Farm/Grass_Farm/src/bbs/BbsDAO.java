@@ -14,8 +14,7 @@ public class BbsDAO {
 	
 	public BbsDAO() {
 		try{
-	
-			String dbURL="jdbc:mysql://localhost:3306/grass_farm";
+			String dbURL="jdbc:mysql://localhost:3306/grass_farm?useUnicode=true&characterEncoding=UTF-8";
 			String dbID="test";
 			String dbPassword="1111";
 			Class.forName("com.mysql.jdbc.Driver");

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,17 +32,10 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"> <span class="sr-only">(current)</span></li>
-              <li><a href="#">outer</a></li>
-              <li><a href="#">shirt&blouse</a></li>
-              <li><a href="#">knit&cardigan</a></li>
-              <li><a href="#">top</a></li>
-              <li><a href="#">pants</a></li>
-              <li><a href="#">skirt</a></li>
-              <li><a href="#">bag</a></li>
-              <li><a href="#">shoes</a></li>
-              <li><a href="#">acc</a></li>
-              <li><a href="#">jewelry</a></li>
+              <li><a href="Write.jsp">WRITE</a></li>
+              <li><a href="#">##</a></li>
+              <li><a href="#">##</a></li>
+              <li><a href="#">##</a></li>
             </ul>
             
             <ul class="nav navbar-nav navbar-right">

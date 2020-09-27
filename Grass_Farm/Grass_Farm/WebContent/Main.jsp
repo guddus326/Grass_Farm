@@ -7,7 +7,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-    
         <meta
         http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- 뷰포트 -->
@@ -18,7 +17,7 @@
        
         <title>Main</title>
         <style>
-        body { padding-top: 50px; }
+        body { padding-top: 30px; }
       	.navbar-fixed-top{
       		background-color: white;
       	}
@@ -26,10 +25,19 @@
             font-family: 'Playfair Display', serif;
             text-align: left;
         }  
+        h1{
+        	font-family: 'ImcreSoojin';
+        }
+        @font-face {
+            font-family: 'ImcreSoojin';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
 		</style>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/hybrid.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
     </head>
     <body>
     <%
@@ -51,18 +59,11 @@
              
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li class="active"> <span class="sr-only">(current)</span></li>
-              <li><a href="Write.jsp">글쓰기</a></li>
-              <li><a href="#">shirt&blouse</a></li>
-              <li><a href="#">knit&cardigan</a></li>
-              <li><a href="#">top</a></li>
-              <li><a href="#">pants</a></li>
-              <li><a href="#">skirt</a></li>
-              <li><a href="#">bag</a></li>
-              <li><a href="#">shoes</a></li>
-              <li><a href="#">acc</a></li>
-              <li><a href="#">jewelry</a></li>
+      		<ul class="nav navbar-nav">
+              <li><a href="Write.jsp">WRITE</a></li>
+              <li><a href="#">##</a></li>
+              <li><a href="#">##</a></li>
+              <li><a href="#">##</a></li>
             </ul>
             
             <%
@@ -87,13 +88,10 @@
     
           <!-- Page Content -->
   <div class="container">
-
     <div class="row">
       <!-- Blog Entries Column -->
       <div class="col-md-8">
-        <h1 class="my-4">오늘의 잔디
-          
-        </h1>
+        <h1>오늘의 잔디</h1>
 		<%
 			BbsDAO bbsDAO=new BbsDAO();
         	ArrayList<Bbs> list=bbsDAO.getList();
@@ -101,27 +99,27 @@
 		%>
 	
         <!-- Blog Post -->
-        <div class="card">
-          <div class="card-body">
-          <pre>
-            <pre><code class="css">
-         body { padding-top: 50px; }
-      	.navbar-fixed-top{
-      		background-color: white;
-      	}
-        .page-header{
-            font-family: 'Playfair Display', serif;
-            text-align: left;
-        }  
-            </code>
-       
-          </pre></div>
+       	<div class="card"> 
+        	<pre><code class="css">
+         	body { 
+         		padding-top: 50px; 
+         	}
+      		.navbar-fixed-top{
+      			background-color: white;
+      		}
+        	.page-header{
+           	 	font-family: 'Playfair Display', serif;
+            	text-align: left;
+      	  	}  
+            </code></pre>      
           <div class="card-body">
             <h2 class="card-title"><%= list.get(i).getBbsTitle()%></h2>
             <p class="card-text"><%= list.get(i).getBbsContent()%></p>
             <a href="#" class="btn btn-primary">Read More &rarr;</a>
           </div>
-          <div class="card-footer text-muted"> Posted on <%= list.get(i).getBbsDate()%> </div>
+          <div class="card-footer text-muted"> 
+          Posted on <%= list.get(i).getBbsDate()%> 
+          </div>
         </div>
 
 		<br><br>

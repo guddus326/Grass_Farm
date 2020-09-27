@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,8 +13,7 @@
             letter-spacing: 8px;
             margin-top: 90px;
             text-align: center;
-            font-family: 'ImcreSoojin';
-           
+            font-family: 'ImcreSoojin';  
         }
         @font-face {
             font-family: 'ImcreSoojin';
@@ -31,7 +29,7 @@
             text-align: center;
         }
     
-    </style>
+   </style>
 </head>
 <body>
     <div class="title">
