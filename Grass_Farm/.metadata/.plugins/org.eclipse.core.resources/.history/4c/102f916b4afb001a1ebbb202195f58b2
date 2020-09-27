@@ -1,0 +1,142 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <meta
+        http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- 뷰포트 -->
+        <meta
+        name="viewport" content="width=device-width" initial-scale="1">
+        <!-- 스타일시트 참조  -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!--<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">  -->
+         
+        <title>Main</title>
+        <style>
+        body { padding-top: 50px; }
+      	.navbar-fixed-top{
+      		background-color: white;
+      	}
+        .page-header{
+            font-family: 'Playfair Display', serif;
+            text-align: left;
+        }  
+		</style>
+    </head>
+    <body>
+    <nav class="navbar-fixed-top navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                </a>
+             </div>
+			<div class="navbar-header">
+            <a href="Index.jsp"><img alt="Brand" width=120px; height=40px;" style="margin-top: 8px;" src="./img/logo.JPG"></a>       
+			</div>
+             
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"> <span class="sr-only">(current)</span></li>
+              <li><a href="#">outer</a></li>
+              <li><a href="#">shirt&blouse</a></li>
+              <li><a href="#">knit&cardigan</a></li>
+              <li><a href="#">top</a></li>
+              <li><a href="#">pants</a></li>
+              <li><a href="#">skirt</a></li>
+              <li><a href="#">bag</a></li>
+              <li><a href="#">shoes</a></li>
+              <li><a href="#">acc</a></li>
+              <li><a href="#">jewelry</a></li>
+            </ul>
+            
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="Login.jsp">LOGIN</a></li>
+              <li><a href="Join.jsp">JOIN</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    
+          <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+      <!-- Blog Entries Column -->
+      <div class="col-md-8">
+        <h1 class="my-4">Page Heading
+          <small>Secondary Text</small>
+        </h1>
+
+        <!-- Blog Post -->
+        <div class="card mb-4">
+          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">Post Title</h2>
+            <p class="card-text">낄ㄹㄹㄹ낄ㄹㄹㄹ낄ㄹㄹㄹ낄ㄹㄹㄹ낄ㄹㄹㄹ낄ㄹㄹㄹ낄ㄹㄹㄹ낄ㄹㄹㄹ낄ㄹㄹㄹ</p>
+            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+          </div>
+          <div class="card-footer text-muted">
+            Posted on January 1, 2020 by
+            <a href="#">Start Bootstrap</a>
+          </div>
+        </div>
+
+        <!-- Blog Post -->
+        <div class="card mb-4">
+          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">Post Title</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+          </div>
+          <div class="card-footer text-muted">
+            Posted on January 1, 2020 by
+            <a href="#">Start Bootstrap</a>
+          </div>
+        </div>
+
+        <!-- Blog Post -->
+        <div class="card mb-4">
+          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">Post Title</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+          </div>
+          <div class="card-footer text-muted">
+            Posted on January 1, 2020 by
+            <a href="#">Start Bootstrap</a>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center mb-4">
+          <li class="page-item">
+            <a class="page-link" href="#">&larr; Older</a>
+          </li>
+          <li class="page-item disabled">
+            <a class="page-link" href="#">Newer &rarr;</a>
+          </li>
+        </ul>
+
+      </div>
+
+   
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+    
+        <!-- 애니매이션 담당 JQUERY -->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <!-- 부트스트랩 JS  -->
+        <script src="js/bootstrap.js"></script>
+  
+    </body>
+</html>

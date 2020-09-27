@@ -1,0 +1,7 @@
+127.0.0.1 - - [23/Sep/2020:14:49:45 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [23/Sep/2020:14:49:46 +0900] "GET /Grass_Farm/Main.jsp HTTP/1.1" 200 5124
+0:0:0:0:0:0:0:1 - - [23/Sep/2020:14:49:46 +0900] "GET /Grass_Farm/css/bootstrap.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Sep/2020:14:49:46 +0900] "GET /Grass_Farm/img/logo.JPG HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Sep/2020:14:49:46 +0900] "GET /Grass_Farm/js/bootstrap.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Sep/2020:14:49:46 +0900] "GET /Grass_Farm/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Sep/2020:14:49:46 +0900] "GET /favicon.ico HTTP/1.1" 404 818
