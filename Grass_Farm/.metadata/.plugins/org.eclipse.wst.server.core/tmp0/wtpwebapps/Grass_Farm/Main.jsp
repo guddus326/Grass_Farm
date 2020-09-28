@@ -63,7 +63,7 @@
               <li><a href="Write.jsp">WRITE</a></li>
               <li><a href="#">##</a></li>
               <li><a href="#">##</a></li>
-              <li><a href="#">##</a></li>
+              <li><a href="#">USER</a></li>
             </ul>
             
             <%
@@ -101,17 +101,8 @@
         <!-- Blog Post -->
        	<div class="card"> 
         	<pre><code class="css">
-         	body { 
-         		padding-top: 50px; 
-         	}
-      		.navbar-fixed-top{
-      			background-color: white;
-      		}
-        	.page-header{
-           	 	font-family: 'Playfair Display', serif;
-            	text-align: left;
-      	  	}  
-            </code></pre>      
+         	<%= list.get(i).getBbsSource()%>
+         	</code></pre>
           <div class="card-body">
             <h2 class="card-title"><%= list.get(i).getBbsTitle()%></h2>
             <p class="card-text"><%= list.get(i).getBbsContent()%></p>

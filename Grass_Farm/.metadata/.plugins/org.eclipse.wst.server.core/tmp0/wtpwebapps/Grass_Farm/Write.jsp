@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
 <!DOCTYPE html>
 <html>
@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width" initial-scale="1">
  <link rel="stylesheet" href="css/bootstrap.min.css">
 
-<title>¿À´ÃÀÇ ÀÜµð</title>
+<title>ì˜¤ëŠ˜ì˜ ìž”ë””</title>
 <style>
  <style>
         body { padding-top: 50px; }
@@ -24,7 +24,7 @@
 </head>
 <body>
 <%
-		//·Î±×ÀÎ ÇÑ»ç¶÷ÀÌ¶ó¸é	 userID¶ó´Â º¯¼ö¿¡ ÇØ´ç ¾ÆÀÌµð°¡ ´ã±â°í ±×·¸Áö ¾ÊÀ¸¸é null°ª
+		//ë¡œê·¸ì¸ í•œì‚¬ëžŒì´ë¼ë©´	 userIDë¼ëŠ” ë³€ìˆ˜ì— í•´ë‹¹ ì•„ì´ë””ê°€ ë‹´ê¸°ê³  ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ nullê°’
 		String userID = null;
 		if (session.getAttribute("userID") != null) {
 			userID = (String) session.getAttribute("userID");
@@ -74,21 +74,20 @@
 			<h2>board Form</h2>
 			<form method="post" action="WriteAction.jsp">
 				<div class="mb-3">
-					<label for="title">Á¦¸ñ</label>
-					<input type="text" class="form-control" name="bbsTitle" placeholder="Á¦¸ñÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä"><br>
+					<label for="title">ì œëª©</label>
+					<input type="text" class="form-control" name="bbsTitle" placeholder="ì œëª©ì„ ìž…ë ¥í•´ ì£¼ì„¸ìš”"><br>
 				</div>
-
 				<div class="mb-3">
-					<label for="content">¼Ò½ºÄÚµå</label>
-					<input type="file" id="file" name="file"><br>
+					<label for="content">ì†ŒìŠ¤ì½”ë“œ</label>
+					<textarea class="form-control" rows="5" name="bbsSource" placeholder="ë‚´ìš©ì„ ìž…ë ¥í•´ ì£¼ì„¸ìš”" ></textarea><br>
+				</div>
+				<div class="mb-3">
+					<label for="content">ë‚´ìš©</label>
+					<textarea class="form-control" rows="5" name="bbsContent" placeholder="ë‚´ìš©ì„ ìž…ë ¥í•´ ì£¼ì„¸ìš”" ></textarea><br>
 				</div>
 				
-				<div class="mb-3">
-					<label for="content">³»¿ë</label>
-					<textarea class="form-control" rows="5" name="bbsContent" placeholder="³»¿ëÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä" ></textarea><br>
-				</div>
 				<div >
-					<button type="submit" class="btn btn-sm btn-primary" id="btnSave">ÀúÀå</button>
+					<button type="submit" class="btn btn-sm btn-primary" id="btnSave">ì €ìž¥</button>
 				</div>
 		</form>
 			

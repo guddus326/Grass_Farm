@@ -1,3 +1,5 @@
 1601182686868	Move 'bootswatch.min.css' to 'css'
 1601182845471	Move 'bootswatch.min.css' to 'WebContent'
 1601182893520	Delete element
+1601261417486	Delete element
+1601262567177	Encapsulate field 'bbsSource'
