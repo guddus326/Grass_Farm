@@ -12,7 +12,7 @@
 <jsp:useBean id="bbs" class="bbs.Bbs" scope="page" />
 <jsp:setProperty name="bbs" property="bbsTitle" />
 <jsp:setProperty name="bbs" property="bbsContent" />
-<jsp:setProperty name="bbs" property="bbsSource" />
+
 <!DOCTYPE html>
 <html>
 <head>

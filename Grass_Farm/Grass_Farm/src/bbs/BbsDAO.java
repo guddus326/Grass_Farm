@@ -35,7 +35,6 @@ public class BbsDAO {
 				bbs.setBbsID(rs.getInt(1));
 				bbs.setBbsTitle(rs.getString(2));
 				bbs.setBbsContent(rs.getString(5));
-				bbs.setBbsSource(rs.getString(6));
 				bbs.setBbsDate(rs.getString(4));
 				list.add(bbs);
 			}
@@ -46,13 +45,13 @@ public class BbsDAO {
 		}
 	//실제로 글을 작성하는 함수
 	public int write(Bbs bbs) { 
-		String SQL = "INSERT INTO bbs(bbsTitle,userID, bbsContent, bbsSource) VALUES (?,?,?,?);";
+		String SQL = "INSERT INTO bbs(bbsTitle,userID, bbsContent) VALUES (?,?,?);";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, bbs.getBbsTitle());
 			pstmt.setString(2, bbs.getUserID());
 			pstmt.setString(3, bbs.getBbsContent());
-			pstmt.setString(4, bbs.getBbsSource());
+
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
