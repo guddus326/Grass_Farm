@@ -35,9 +35,5 @@ public class User {
 	}
 	public void setUserPassCheck(String userPassCheck) {
 		this.userPassCheck = userPassCheck;
-	}
-	
-	
-	
-	
+	}	
 }

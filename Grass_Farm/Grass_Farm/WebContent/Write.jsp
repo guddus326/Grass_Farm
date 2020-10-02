@@ -72,16 +72,15 @@
 	<article>
 		<div class="container" role="main">
 			<h2>board Form</h2>
-			<form method="post" action="FileUpload.jsp" enctype="Multipart/form-data">
+			<form method="post" action="WriteAction.jsp">
 				<div class="mb-3">
 					<label for="title">제목</label>
 					<input type="text" class="form-control" name="bbsTitle" placeholder="제목을 입력해 주세요"><br>
 				</div>
 				<div class="mb-3">
 					<label for="content">소스코드</label>
-				    <input type="file" name="bbsSource"><br>
+				    <textarea class="form-control" rows="5" name="bbsSource" placeholder="소스코드를 입력해 주세요" ></textarea><br>
 				</div>
-				
 				<div class="mb-3">
 					<label for="content">내용</label>
 					<textarea class="form-control" rows="5" name="bbsContent" placeholder="내용을 입력해 주세요" ></textarea><br>

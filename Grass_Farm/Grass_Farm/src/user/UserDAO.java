@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import bbs.Bbs;
 
 public class UserDAO {
 	
@@ -60,4 +63,23 @@ public class UserDAO {
 		}
 		return -1; //DB ¿À·ù
 	}
+	
+	public ArrayList<User> search(String userName) {
+		String SQL="select * from user where userName=?";
+		ArrayList<User> list=new ArrayList<User>();
+		try {
+			pstmt=conn.prepareStatement(SQL);
+			pstmt.setString(1,userName);
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				User user=new User();
+				user.setUserID(rs.getString(1));
+				user.setUserName(rs.getString(3));
+				list.add(user);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+			return list;
+		}
 }

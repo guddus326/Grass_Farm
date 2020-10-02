@@ -47,24 +47,28 @@
 	}
     %>
     <nav class="navbar-fixed-top navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">
-                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+    	<div class="container-fluid">
+    		<div class="navbar-header">
+            	<a class="navbar-brand" href="#">
+                	<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
                 </a>
              </div>
 			<div class="navbar-header">
-            <a href="Index.jsp"><img alt="Brand" width=120px; height=40px;" style="margin-top: 8px;" src="./img/logo.JPG"></a>       
+            	<a href="Index.jsp"><img alt="Brand" width=120px; height=40px;" style="margin-top: 8px;" src="./img/logo.JPG"></a>       
 			</div>
-             
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      		<ul class="nav navbar-nav">
-              <li><a href="Write.jsp">WRITE</a></li>
-              <li><a href="#">##</a></li>
-              <li><a href="#">##</a></li>
-              <li><a href="#">USER</a></li>
-            </ul>
+          	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      			<ul class="nav navbar-nav">
+              		<li><a href="Write.jsp">WRITE</a></li>
+              		<li><a href="#">##</a></li>
+              		<li><a href="#">##</a></li>
+              		<li><a href="#">USER</a></li>
+            	</ul>
+          <form class="navbar-form navbar-right" role="search" action="Search.jsp">
+          	<div class="form-group">
+          		<input type="text" class="form-control" placeholder="Search" name="userName">
+        	</div>
+        	<button type="submit" class="btn btn-default">Submit</button>
+      	  </form>
             
             <%
             	if(userID==null){
@@ -95,6 +99,7 @@
 		<%
 			BbsDAO bbsDAO=new BbsDAO();
         	ArrayList<Bbs> list=bbsDAO.getList();
+        	
         	for(int i=0; i<list.size(); i++){
 		%>
 	
