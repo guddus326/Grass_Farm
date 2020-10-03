@@ -75,6 +75,7 @@ public class UserDAO {
 				User user=new User();
 				user.setUserID(rs.getString(1));
 				user.setUserName(rs.getString(3));
+				user.setUserEmail(rs.getString(4));
 				list.add(user);
 			}
 		}catch(Exception e) {

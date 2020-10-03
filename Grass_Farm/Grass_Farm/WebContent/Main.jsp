@@ -117,20 +117,13 @@
           Posted on <%= list.get(i).getBbsDate()%> 
           </div>
         </div>
-
 		<br><br>
-
 		<%
         	}
 		%>
-
       </div>
-
-   
-
     </div>
     <!-- /.row -->
-
   </div>
   <!-- /.container -->
     
