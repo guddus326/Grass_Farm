@@ -99,18 +99,17 @@
 		<%
 			BbsDAO bbsDAO=new BbsDAO();
         	ArrayList<Bbs> list=bbsDAO.getList();
-        	
         	for(int i=0; i<list.size(); i++){
 		%>
 	
         <!-- Blog Post -->
        	<div class="card"> 
-        	<pre><code class="css">
-         	<%= list.get(i).getBbsSource()%>
+        	<pre><code class="<%= list.get(i).getBbsLanguage()%>">
+         	<%=list.get(i).getBbsSource()%>
          	</code></pre>
           <div class="card-body">
-            <h2 class="card-title"><%= list.get(i).getBbsTitle()%></h2>
-            <p class="card-text"><%= list.get(i).getBbsContent()%></p>
+            <h2 class="card-title"><%=list.get(i).getBbsTitle()%></h2>
+            <p class="card-text"><%=list.get(i).getBbsContent()%></p>
             <a href="#" class="btn btn-primary">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted"> 
@@ -131,6 +130,10 @@
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <!-- 부트스트랩 JS  -->
         <script src="js/bootstrap.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> <!-- activate highlight.js --> <script>hljs.initHighlightingOnLoad();</script>
+		<script src="js/highlight.pack.js"></script>
+
+
   
     </body>
 </html>

@@ -13,6 +13,7 @@
 <jsp:setProperty name="bbs" property="bbsTitle" />
 <jsp:setProperty name="bbs" property="bbsContent" />
 <jsp:setProperty name="bbs" property="bbsSource" />
+<jsp:setProperty name="bbs" property="bbsLanguage" />
 
 <!DOCTYPE html>
 <html>

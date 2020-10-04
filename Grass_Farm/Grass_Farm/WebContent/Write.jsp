@@ -87,16 +87,17 @@
 				<div class="mb-3">
 					<label for="language">LANGUAGE</label>
 					<select class="form-control" name="bbsLanguage">
-	  					<option>JAVA</option>
-	  					<option>C</option>
-	  					<option>C++</option>
-	  					<option>C#</option>
-	  					<option>PYTHON</option>
-	  					<option>PHP</option>
-	  					<option>JSP</option>
-	  					<option>HTML</option>
-	  					<option>CSS</option>
-	  					<option>JavaScript</option>
+	  					<option value="">LANGUAGE</option>
+	  					<option value="JAVA">JAVA</option>
+	  					<option value="C">C</option>
+	  					<option value="C++">C++</option>
+	  					<option value="C#">C#</option>
+	  					<option value="PYTHON">PYTHON</option>
+	  					<option value="PHP">PHP</option>
+	  					<option value="JSP">JSP</option>
+	  					<option value="HTML">HTML</option>
+	  					<option value="CSS">CSS</option>
+	  					<option value="JavaScript">JavaScript</option>
 					</select>
 				</div><BR>
 				<div class="mb-3">
