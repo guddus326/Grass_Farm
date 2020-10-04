@@ -6,7 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width" initial-scale="1">
- <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+
 
 <title>오늘의 잔디</title>
 <style>
@@ -82,16 +85,28 @@
 				    <textarea class="form-control" rows="5" name="bbsSource" placeholder="소스코드를 입력해 주세요" ></textarea><br>
 				</div>
 				<div class="mb-3">
+					<label for="language">LANGUAGE</label>
+					<select class="form-control" name="bbsLanguage">
+	  					<option>JAVA</option>
+	  					<option>C</option>
+	  					<option>C++</option>
+	  					<option>C#</option>
+	  					<option>PYTHON</option>
+	  					<option>PHP</option>
+	  					<option>JSP</option>
+	  					<option>HTML</option>
+	  					<option>CSS</option>
+	  					<option>JavaScript</option>
+					</select>
+				</div><BR>
+				<div class="mb-3">
 					<label for="content">내용</label>
 					<textarea class="form-control" rows="5" name="bbsContent" placeholder="내용을 입력해 주세요" ></textarea><br>
 				</div>
-				
 				<div >
 					<button type="submit" class="btn btn-sm btn-primary" id="btnSave">저장</button>
 				</div>
 		</form>
-			
-		
 		</div>
 	</article>
 </body>
