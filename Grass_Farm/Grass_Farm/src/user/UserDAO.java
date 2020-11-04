@@ -73,9 +73,9 @@ public class UserDAO {
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				User user=new User();
-				user.setUserID(rs.getString(1));
-				user.setUserName(rs.getString(3));
-				user.setUserEmail(rs.getString(4));
+				user.setUserID(rs.getString(2));
+				user.setUserName(rs.getString(4));
+				user.setUserEmail(rs.getString(5));
 				list.add(user);
 			}
 		}catch(Exception e) {

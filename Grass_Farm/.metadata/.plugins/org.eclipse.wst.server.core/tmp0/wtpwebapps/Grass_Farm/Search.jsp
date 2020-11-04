@@ -282,7 +282,7 @@ small, time, .small {
 	for(int i=0; i<list.size(); i++){
 	%>
 	<%count+=1;%>
-	
+
  	<p class="card-text"></p>
  	
  	<div class="container">
@@ -291,7 +291,7 @@ small, time, .small {
         		<div class="media card-body"> 
            			<div class="media-body">
                 		<div class="mb-2">
-                   			<span class="fs-20 pr-16"><%=list.get(i).getUserName()%></span>
+                   			<span class="fs-20 pr-16" onclick="location.href='Show.jsp'"><%=list.get(i).getUserName()%></span>
                			</div>
                			<small class="fs-16 fw-300 ls-1">@<%=list.get(i).getUserID()%></small><br>
                 		<p class="fs-14 text-fade mb-12"><i class="fa fa-map-marker pr-1"></i><%=list.get(i).getUserEmail()%></p>
@@ -305,7 +305,7 @@ small, time, .small {
             	</div>
             	
             	<div class="media-right text-right d-none d-md-block">
-                	<button type="button" class="btn btn-success" onclick="location.href='Login.jsp'">FOLLOW</button>
+                	<button type="button" class="btn btn-success" onclick="location.href='Follow.jsp'">FOLLOW</button>
             	</div>
             	
         		</footer>
@@ -314,6 +314,6 @@ small, time, .small {
 	</div>
 	
  	<%}%>
- 	<p class="card-text"><%=count%></p>
+
   </body>
  </html>

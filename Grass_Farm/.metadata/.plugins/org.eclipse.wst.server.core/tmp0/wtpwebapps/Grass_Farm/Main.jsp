@@ -61,7 +61,7 @@
               		<li><a href="Write.jsp">WRITE</a></li>
               		<li><a href="#">##</a></li>
               		<li><a href="#">##</a></li>
-              		<li><a href="#">USER</a></li>
+              		<li><a href="User.jsp">USER</a></li>
             	</ul>
           <form class="navbar-form navbar-right" role="search" action="Search.jsp">
           	<div class="form-group">

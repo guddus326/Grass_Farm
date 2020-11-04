@@ -1,3 +1,13 @@
 
 9월 27, 2020 16:55:40.69 NEW SESSION
 9월 27, 2020 16:55:40.69 [57704:55464:0927/165540.687:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+
+10월 07, 2020 17:03:32.97 NEW SESSION
+10월 07, 2020 17:03:32.97 [9332:18152:1007/170332.965:ERROR:socket_stream.cc(219)] Closing stream with result -2
+10월 07, 2020 17:03:33.26 [9332:18152:1007/170333.259:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -105
+10월 07, 2020 17:03:35.71 [9332:18152:1007/170335.710:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+10월 07, 2020 17:04:24.14 [9332:18152:1007/170424.143:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+
+11월 03, 2020 21:09:03.38 NEW SESSION
+11월 03, 2020 21:09:03.38 [1103/210903.370:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+11월 04, 2020 13:30:20.76 [1104/133020.714:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)
