@@ -13,7 +13,8 @@
         <meta
         name="viewport" content="width=device-width" initial-scale="1">
         <!-- 스타일시트 참조  -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        
        
         <title>Main</title>
         <style>
@@ -48,13 +49,9 @@
     %>
     <nav class="navbar-fixed-top navbar-default">
     	<div class="container-fluid">
-    		<div class="navbar-header">
-            	<a class="navbar-brand" href="#">
-                	<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-                </a>
-             </div>
+    		
 			<div class="navbar-header">
-            	<a href="Index.jsp"><img alt="Brand" width=120px; height=40px;" style="margin-top: 8px;" src="./img/logo.JPG"></a>       
+            	<a href="Index.jsp"><img alt="Brand" width=120px; height=40px;" style="margin-top: 5px;" src="./img/logo.JPG"></a>       
 			</div>
           	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       			<ul class="nav navbar-nav">
@@ -67,9 +64,10 @@
           	<div class="form-group">
           		<input type="text" class="form-control" placeholder="Search" name="userName">
         	</div>
-        	<button type="submit" class="btn btn-default">Submit</button>
+        	<button type="submit" class="btn btn-success">SEARCH</button>
       	  </form>
-            
+      	  
+  
             <%
             	if(userID==null){
             %>

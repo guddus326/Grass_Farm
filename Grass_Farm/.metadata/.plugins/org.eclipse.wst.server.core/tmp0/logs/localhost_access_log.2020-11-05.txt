@@ -1,0 +1,5 @@
+127.0.0.1 - - [05/Nov/2020:20:03:19 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [05/Nov/2020:20:03:21 +0900] "GET /Grass_Farm/calendar-heatmap-master/index.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [05/Nov/2020:20:03:21 +0900] "GET /Grass_Farm/calendar-heatmap-master/dist/calendar-heatmap.min.css HTTP/1.1" 200 1007
+0:0:0:0:0:0:0:1 - - [05/Nov/2020:20:03:21 +0900] "GET /Grass_Farm/calendar-heatmap-master/dist/calendar-heatmap.min.js HTTP/1.1" 200 36131
+0:0:0:0:0:0:0:1 - - [05/Nov/2020:20:03:21 +0900] "GET /favicon.ico HTTP/1.1" 404 818

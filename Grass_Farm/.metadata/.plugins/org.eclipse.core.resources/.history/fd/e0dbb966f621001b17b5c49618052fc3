@@ -1,0 +1,120 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="user.UserDAO"%>
+<%@ page import="user.User" %>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.util.ArrayList" %>
+<!-- 자바 클래스 사용 -->
+<% request.setCharacterEncoding("UTF-8"); %>
+<!-- 한명의 회원정보를 담는 user클래스를 자바 빈즈로 사용 / scope:페이지 현재의 페이지에서만 사용-->
+<jsp:useBean id="user" class="user.User" scope="page"/>
+<jsp:setProperty property="userName" name="user"/>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<script src="https://kit.fontawesome.com/ed128c5a1e.js" crossorigin="anonymous"></script>
+<title>내 프로필</title>
+<style>
+body { padding-top: 30px; }
+      	.navbar-fixed-top{
+      		background-color: white;
+      	}
+        .page-header{
+            font-family: 'Playfair Display', serif;
+            text-align: left;
+        }  
+	.modal {
+        background-color: rgb(0,0,0); 
+        background-color: rgba(0,0,0,0.4); 
+        text-align: center;
+        
+    }
+    .modal-content {
+        background-color: #fefefe;
+        border: 1px solid #888;    
+        font-size: 20px;  
+        vertical-align: middle;
+    }
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+    <script defer src="/static/fontawesome/fontawesome-all.js"></script>
+</head>
+<body>
+<%
+	String userID=null;
+	if(session.getAttribute("userID")!=null){
+		userID=(String)session.getAttribute("userID");
+	}
+    %>
+    <nav class="navbar-fixed-top navbar-default">
+    	<div class="container-fluid">
+    		<div class="navbar-header">
+            	<a class="navbar-brand" href="#">
+                	<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                </a>
+             </div>
+			<div class="navbar-header">
+            	<a href="Index.jsp"><img alt="Brand" width=120px; height=40px;" style="margin-top: 8px;" src="./img/logo.JPG"></a>       
+			</div>
+          	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      			<ul class="nav navbar-nav">
+              		<li><a href="Write.jsp">WRITE</a></li>
+              		<li><a href="#">##</a></li>
+              		<li><a href="#">##</a></li>
+              		<li><a href="User.jsp">USER</a></li>
+            	</ul>
+          <form class="navbar-form navbar-right" role="search" action="Search.jsp">
+          	<div class="form-group">
+          		<input type="text" class="form-control" placeholder="Search" name="userName">
+        	</div>
+        	<button type="submit" class="btn btn-default">Submit</button>
+      	  </form>
+            
+            <%
+            	if(userID==null){
+            %>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="Login.jsp">LOGIN</a></li>
+              <li><a href="Join.jsp">JOIN</a></li>
+            </ul>
+            <%
+            	}else{
+            %>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="LogoutAction.jsp">LOGOUT</a></li>
+            </ul>
+            <%
+            	}
+            %>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+  								 							 					 				
+  							
+    						  	        
+</body>
+</html>
