@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="user.UserDAO"%>
 <%@ page import="user.User" %>
+<%@ page import="follow.FollowDAO"%>
+<%@ page import="follow.Follow" %>
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="java.util.ArrayList" %>
-<!-- 자바 클래스 사용 -->
 <% request.setCharacterEncoding("UTF-8"); %>
-<!-- 한명의 회원정보를 담는 user클래스를 자바 빈즈로 사용 / scope:페이지 현재의 페이지에서만 사용-->
+<%@ include file="navbar.jsp" %>
 <jsp:useBean id="user" class="user.User" scope="page"/>
 <jsp:setProperty property="userName" name="user"/>
 
@@ -17,13 +18,16 @@
 <title>잔디공작소</title>
 <style>
   		body{ 
-  			padding-top: 30px; 
+  			padding-top: 90px; 
   			background-color: white;
-  			}
+  		}
       	.navbar-fixed-top{
       		background-color: white;
       	}
-      	h1{
+      	body{
+      	background-color: white;
+      	}
+      	h1, #ps{
         	font-family: 'ImcreSoojin';
         }
         @font-face {
@@ -31,8 +35,7 @@
             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
             font-weight: normal;
             font-style: normal;
-        }
-        .pr-12 {
+        }.pr-12 {
     padding-right: 12px !important;
 }
 
@@ -218,101 +221,59 @@ small, time, .small {
 .fs-10 {
     font-size: 10px !important;
 }
-		
+	
+        
 </style>
 </head>
 <body>
-<%
-	String userID=null;
-	if(session.getAttribute("userID")!=null){
-		userID=(String)session.getAttribute("userID");
-	}
-%>
-<br>
-<br>
-<br>
-	<nav class="navbar-fixed-top navbar-default">
-    	<div class="container-fluid">
-    		<div class="navbar-header">
-            	<a class="navbar-brand" href="#">
-                	<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-                </a>
-             </div>
-			<div class="navbar-header">
-            	<a href="Index.jsp"><img alt="Brand" width=120px; height=40px;" style="margin-top: 8px;" src="./img/logo.JPG"></a>       
-			</div>
-          	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      			<ul class="nav navbar-nav">
-              		<li><a href="Write.jsp">WRITE</a></li>
-              		<li><a href="#">##</a></li>
-              		<li><a href="#">##</a></li>
-              		<li><a href="#">USER</a></li>
-            	</ul>
-          <form class="navbar-form navbar-right" role="search" action="Search.jsp">
-          	<div class="form-group">
-          		<input type="text" class="form-control" placeholder="Search" name="userName">
-        	</div>
-        	<button type="submit" class="btn btn-default">Submit</button>
-      	  </form>
-            
-            <%
-            	if(userID==null){
-            %>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="Login.jsp">LOGIN</a></li>
-              <li><a href="Join.jsp">JOIN</a></li>
-            </ul>
-            <%
-            	}else{
-            %>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="LogoutAction.jsp">LOGOUT</a></li>
-            </ul>
-            <%
-            	}
-            %>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
     
   	<%
+  	String username = request.getParameter("userName");
  	UserDAO userDAO=new UserDAO();
-	ArrayList<User> list=userDAO.search(user.getUserName());
-	int count=0;
+ 	FollowDAO followDAO=new FollowDAO();
+	ArrayList<User> list=userDAO.search(username);
 	for(int i=0; i<list.size(); i++){
-	%>
-	<%count+=1;%>
+	int follow=followDAO.SearchFollowing(userID,list.get(i).getUserID()); 
 
+	%>
+	
  	<p class="card-text"></p>
- 	
  	<div class="container">
 		<div class="col-md-12">
     		<div class="card b-1 hover-shadow mb-20">
         		<div class="media card-body"> 
            			<div class="media-body">
-                		<div class="mb-2">
-                   			<span class="fs-20 pr-16" onclick="location.href='Show.jsp'"><%=list.get(i).getUserName()%></span>
-               			</div>
-               			<small class="fs-16 fw-300 ls-1">@<%=list.get(i).getUserID()%></small><br>
+           				<form method="post" action="Follow.jsp">
+                			<div class="mb-2">
+                				<span class="fs-20 pr-16" onclick="location.href='SearchUser.jsp?id=<%=list.get(i).getUserID()%>'" ><%=list.get(i).getUserName() %></span>
+               				</div>
+               			@<%=list.get(i).getUserID()%></input><br>
+               			
                 		<p class="fs-14 text-fade mb-12"><i class="fa fa-map-marker pr-1"></i><%=list.get(i).getUserEmail()%></p>
+                		
             		</div>
         		</div>
         		<footer class="card-footer flexbox align-items-center">
             	<div>
                		<strong>Applied on:</strong>
-                	<span>21 Jan, 2017</span>
-                	
+                	<span><%= list.get(i).getUserDate()%></span>             
             	</div>
-            	
             	<div class="media-right text-right d-none d-md-block">
-                	<button type="button" class="btn btn-success" onclick="location.href='Follow.jsp'">FOLLOW</button>
+            	<input type="text" name="id" style="display:none" value=<%=list.get(i).getUserID()%>>
+            		<% if(list.get(i).getUserID().equals(userID)){%>  
+                	<%}else if(follow>0){%>
+                	<a href='Unfollow.jsp?id=<%=list.get(i).getUserID()%>' class="btn btn-success" value="UNFOLLOW">UNFOLLOW</a>
+                	<%}else{%>
+                	<a href='Follow.jsp?id=<%=list.get(i).getUserID()%>' class="btn btn-success" value="FOLLOW">FOLLOW</a>
+                	<%} %>
             	</div>
-            	
         		</footer>
+        		</form>
     		</div>
 		</div>
 	</div>
 	
+ 	<%user.setUserID(list.get(i).getUserID());%>
  	<%}%>
 
   </body>

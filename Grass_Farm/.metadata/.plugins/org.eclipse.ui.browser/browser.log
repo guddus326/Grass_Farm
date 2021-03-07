@@ -41,3 +41,13 @@
 11월 09, 2020 09:01:08.72 [8240:17452:1109/090108.729:ERROR:get_updates_processor.cc(257)] PostClientToServerMessage() failed during GetUpdates with error 2
 11월 09, 2020 09:11:23.40 [8240:17756:1109/091123.407:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
 11월 09, 2020 09:11:44.30 [8240:17756:1109/091144.305:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+
+11월 10, 2020 17:31:57.76 NEW SESSION
+11월 10, 2020 17:31:57.77 [1110/173157.767:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+11월 10, 2020 18:27:27.12 [1110/182727.120:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+
+11월 15, 2020 23:19:54.24 NEW SESSION
+11월 15, 2020 23:19:54.24 [1115/231954.234:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+
+11월 21, 2020 14:12:12.41 NEW SESSION
+11월 21, 2020 14:12:12.41 [1121/141212.409:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)

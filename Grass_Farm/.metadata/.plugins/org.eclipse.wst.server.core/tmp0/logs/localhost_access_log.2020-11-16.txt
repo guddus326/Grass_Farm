@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 - - [16/Nov/2020:00:02:43 +0900] "GET /Grass_Farm/Search.jsp?userName=gg HTTP/1.1" 200 6655
+0:0:0:0:0:0:0:1 - - [16/Nov/2020:00:02:44 +0900] "POST /Grass_Farm/Follow.jsp HTTP/1.1" 200 478
+0:0:0:0:0:0:0:1 - - [16/Nov/2020:00:05:01 +0900] "GET /Grass_Farm/Search.jsp?userName=gg HTTP/1.1" 200 6641
+0:0:0:0:0:0:0:1 - - [16/Nov/2020:00:05:03 +0900] "POST /Grass_Farm/Follow.jsp HTTP/1.1" 200 478
+0:0:0:0:0:0:0:1 - - [16/Nov/2020:00:08:49 +0900] "POST /Grass_Farm/Follow.jsp HTTP/1.1" 200 478

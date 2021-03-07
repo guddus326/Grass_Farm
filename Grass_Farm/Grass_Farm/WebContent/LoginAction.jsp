@@ -14,15 +14,13 @@
 </head>
 <body>
 	<%
-	
-
 		UserDAO userDAO=new UserDAO();
 		int result=userDAO.login(user.getUserID(),user.getUserPass());
 		if(result==1){
 			PrintWriter script=response.getWriter();
 			session.setAttribute("userID", user.getUserID());
 			script.println("<script>");
-			script.println("location.href='Main.jsp'");
+			script.println("location.href='Index.jsp'");
 			script.println("</script>");
 		}
 		if(result==0){

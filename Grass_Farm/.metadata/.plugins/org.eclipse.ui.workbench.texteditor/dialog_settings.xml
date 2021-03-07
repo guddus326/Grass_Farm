@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="calendar"/>
+		<item key="selection" value="Context"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="calendar"/>
+			<item value="CONTEXT"/>
+			<item value="context"/>
+			<item value="init"/>
+			<item value="month"/>
+			<item value="global"/>
+			<item value="drawDayOverview"/>
+			<item value="calendarHeatmap.drawDayOverview()"/>
 			<item value="data"/>
+			<item value="var data"/>
+			<item value="var date"/>
+			<item value="calendar"/>
 			<item value="var data = [{"/>
 		</list>
 		<list key="replacehistory">

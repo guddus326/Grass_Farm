@@ -6,6 +6,8 @@ public class User {
 	private String userPassCheck;
 	private String userName;
 	private String userEmail;
+	private String userDate;
+	
 	public String getUserID() {
 		return userID;
 	}
@@ -35,5 +37,12 @@ public class User {
 	}
 	public void setUserPassCheck(String userPassCheck) {
 		this.userPassCheck = userPassCheck;
+	}
+
+	public String getUserDate() {
+		return userDate;
+	}
+	public void setUserDate(String userDate) {
+		this.userDate = userDate;
 	}	
 }

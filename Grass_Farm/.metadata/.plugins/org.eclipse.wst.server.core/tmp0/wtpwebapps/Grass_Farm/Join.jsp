@@ -1,100 +1,99 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="navbar.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta
-        http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!-- 뷰포트 -->
-        <meta
-        name="viewport" content="width=device-width" initial-scale="1">
-        <!-- 스타일시트 참조  -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+        <meta name="viewport" content="width=device-width" initial-scale="1">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <title>Join</title>
+        <title>잔디공작소</title>
         <style>
         body { padding-top: 50px; }
         .navbar-fixed-top { background-color: #ffffff; }
         .page-header{
             font-family: 'Playfair Display', serif;
             text-align: left;
-        }  
+        }
+        
+.login-form {
+    width: 350px;
+    margin: 5% auto;
+}
+.login-form form {        
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.login-form h2 {
+    margin: 0 0 15px;
+}
+.form-control, .login-btn {
+    border-radius: 2px;
+}
+.input-group-prepend .fa {
+    font-size: 18px;
+}
+.login-btn {
+    font-size: 15px;
+    font-weight: bold;
+  	min-height: 40px;
+}
+.form-control{
+	float: right;
+	width:90%;
+	margin-bottom:3%;
+}
+          
 		</style>
     </head>
-    <body>
-    <%
-		String userID=null;
-		if(session.getAttribute("userID")!=null){
-			userID=(String)session.getAttribute("userID");
-		}
-    %>
-    <nav class="navbar-fixed-top navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">
-                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-                </a>
-             </div>
-			<div class="navbar-header">
-            <a href="Index.jsp"><img alt="Brand" width=120px; height=40px;" style="margin-top: 8px;" src="./img/logo.JPG"></a>       
+    <body>   
+      
+       <!-- 회원가입폼 -->
+<div class="login-form">
+    <form action="JoinAction.jsp" method="post">
+        <h2 class="text-center" style="padding-bottom:2%"><b>Join</b></h2>  
+        
+        <div class="form-group">
+        	<div class="input-group">
+  				<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+  				<input type="text" class="form-control" name="userID" placeholder="UserID" required="required">
 			</div>
-             
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-           <ul class="nav navbar-nav">
-              <li><a href="Write.jsp">WRITE</a></li>
-              <li><a href="#">##</a></li>
-              <li><a href="#">##</a></li>
-              <li><a href="#">##</a></li>
-            </ul>
-            
-            <%
-            	if(userID==null){
-            %>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="Login.jsp">LOGIN</a></li>
-              <li><a href="Join.jsp">JOIN</a></li>
-            </ul>
-            <%
-            	}else{
-            %>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="LogoutAction.jsp">LOGOUT</a></li>
-            </ul>
-            <%
-            	}
-            %>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>    
-        <!-- 로긴폼 -->
-        <div class="container">
-            <div class="col-lg-4"></div>
-            <div class="col-lg-4" style="padding-top: 50px;">
-                <!-- 점보트론 -->
-                <div class="jumbotron" style="padding-top: 10px;">
-                    <!-- 로그인 정보를 숨기면서 전송post -->
-                    <form method="post" action="JoinAction.jsp">
-                        <h3 style="text-align: center;">회원가입</h3>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="이름" name="userName" maxlength="20">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="아이디" name="userID" maxlength="20">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="비밀번호" name="userPass" maxlength="20">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="비밀번호확인" name="userPassCheck" maxlength="20">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="이메일" name="userEmail" maxlength="50">
-                        </div>
-                        <input type="submit" class="btn btn-primary form-control" value="회원가입">
-                    </form>
-                </div>
-            </div>
         </div>
+        
+        <div class="form-group">
+        	<div class="input-group">
+  				<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+  				<input type="password" class="form-control" name="userPass" placeholder="Password" required="required">
+			</div>
+        </div>
+        
+        <div class="form-group">
+        	<div class="input-group">
+  				<span class="input-group-addon"><i class="glyphicon glyphicon-ok"></i></span>
+  				<input type="password" class="form-control" name="userPassCheck" placeholder="PasswordCheck" required="required">
+			</div>
+        </div>
+        
+        <div class="form-group">
+        	<div class="input-group">
+  				<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+  				<input type="text" class="form-control" name="userName" placeholder="UserName" required="required">
+			</div>
+        </div>
+        
+        <div class="form-group">
+        	<div class="input-group">
+  				<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  				<input type="text" class="form-control" name="userEmail" placeholder="UserEmail" required="required">
+			</div>
+        </div>
+              
+        <div class="form-group">
+            <button type="submit" class="btn btn-success login-btn btn-block">Sign up</button>
+        </div>
+    </form>
+</div>      
         <!-- 애니매이션 담당 JQUERY -->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <!-- 부트스트랩 JS  -->

@@ -54,5 +54,4 @@ public class Bbs {
 		this.bbsLanguage = bbsLanguage;
 	}
 	
-	
 }

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import bbs.Bbs;
@@ -11,7 +12,7 @@ import bbs.Bbs;
 public class UserDAO {
 	
 	private Connection conn;
-	private PreparedStatement pstmt;
+	private PreparedStatement pstmt,pstmt1;
 	private ResultSet rs;
 	
 	public UserDAO() {
@@ -48,21 +49,46 @@ public class UserDAO {
 		}
 		return -2;
 	}
-	
-	public int join(User user) {
+
+
+	public int join(User user){	
+		if(!user.getUserPass().equals(user.getUserPassCheck())) {
+			return -2;
+		}else {
 		String SQL = "INSERT INTO user(userName, userID, userPass, userEmail) VALUES (?, ?, ?, ?);";
 		try {
 			pstmt = conn.prepareStatement(SQL);
+		
+			
 			pstmt.setString(1, user.getUserName());
 			pstmt.setString(2, user.getUserID());
 			pstmt.setString(3, user.getUserPass());
 			pstmt.setString(4, user.getUserEmail());
 			return pstmt.executeUpdate();
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return -1; //DB ¿À·ù
+		return -1;
+		}
 	}
+		public int joinfollow(User user){	
+	
+			String SQL = "INSERT INTO follow(me,follow) VALUES (?, ?);";
+			try {
+				pstmt = conn.prepareStatement(SQL);
+				pstmt.setString(1, user.getUserID());
+				pstmt.setString(2, user.getUserID());
+				return pstmt.executeUpdate();
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			return -1;
+			}
+		
+	
+	
 	
 	public ArrayList<User> search(String userName) {
 		String SQL="select * from user where userName=?";
@@ -73,9 +99,10 @@ public class UserDAO {
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				User user=new User();
-				user.setUserID(rs.getString(2));
-				user.setUserName(rs.getString(4));
-				user.setUserEmail(rs.getString(5));
+				user.setUserID(rs.getString(1));
+				user.setUserName(rs.getString(3));
+				user.setUserEmail(rs.getString(4));
+				user.setUserDate(rs.getString(5));
 				list.add(user);
 			}
 		}catch(Exception e) {
@@ -83,6 +110,7 @@ public class UserDAO {
 		}
 			return list;
 		}
+	
 	
 	public ArrayList<User> user(String userID) {
 		String SQL="select * from user where userID=?";
@@ -93,8 +121,8 @@ public class UserDAO {
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				User user=new User();
-				user.setUserName(rs.getString(4));
-				user.setUserEmail(rs.getString(5));
+				user.setUserName(rs.getString(3));
+				user.setUserEmail(rs.getString(4));
 				User.add(user);
 			}
 		}catch(Exception e) {
@@ -102,4 +130,6 @@ public class UserDAO {
 		}
 			return User;
 		}
+	
+	
 }
