@@ -1,10 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>jQuery Calmosaic: Github-inspired Heatmap Examples</title>
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="dist/jquery.calmosaic.min.css">
@@ -26,12 +27,14 @@
 </head>
 
 <body>
+<% int count=Integer.parseInt(request.getParameter("count"));%>  
     <div class="container">
         <div class="col-md-12">
             <div id="heatmap-1"></div>
         </div>
     </div>
     <script>
+   
         function randomDate(start, end) {
             var date = new Date(+start + Math.random() * (end - start));
             return moment(date).format('YYYY-MM-DD');

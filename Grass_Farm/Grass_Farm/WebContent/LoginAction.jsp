@@ -26,14 +26,14 @@
 		if(result==0){
 			PrintWriter script=response.getWriter();
 			script.println("<script>");
-			script.println("alert('비번틀림')");
+			script.println("alert('ID 또는 비밀번호가 틀렸습니다')");
 			script.println("history.back()");
 			script.println("</script>");
 		}
 		if(result==-1){
 			PrintWriter script=response.getWriter();
 			script.println("<script>");
-			script.println("alert('아이디틀림')");
+			script.println("alert('ID 또는 비밀번호가 틀렸습니다')");
 			script.println("history.back()");
 			script.println("</script>");
 		}

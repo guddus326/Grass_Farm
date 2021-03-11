@@ -15,7 +15,9 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
 		<title>잔디공작소</title>
         <style>
-        body { padding-top: 30px; }
+        body { 
+        	padding-top: 30px; 
+        	}
       	.navbar-fixed-top{
       		background-color: white;
       	}
@@ -53,7 +55,6 @@
 			ArrayList<User> user=userDAO.user((String)session.getAttribute("userID"));
 			int count=bbsDAO.getCount((String)session.getAttribute("userID"));
 			int monthcount=bbsDAO.getmonthCount((String)session.getAttribute("userID"), String.valueOf((cal.get(Calendar.MONTH)+1)));
-			
 			%>
 			
   			 <div class="container">
@@ -149,9 +150,12 @@
     							}
     							</script>
     							
-    							<%@ include file="github.html" %>
+    							
+    							<% response.sendRedirect("github.jsp?count="+count);%>
 
 
+    							 
+    							
 
 </body>
 </html>
