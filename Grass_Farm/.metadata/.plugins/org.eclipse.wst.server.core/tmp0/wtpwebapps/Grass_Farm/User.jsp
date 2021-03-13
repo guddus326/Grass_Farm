@@ -150,8 +150,8 @@
     							}
     							</script>
     							
-    							
-    							<% response.sendRedirect("github.jsp?count="+count);%>
+    							<jsp:include page="github.jsp" />
+    						
 
 
     							 

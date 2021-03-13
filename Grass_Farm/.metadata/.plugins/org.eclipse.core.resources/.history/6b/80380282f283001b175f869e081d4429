@@ -151,7 +151,7 @@
     							</script>
     							
     							<jsp:include page="github.jsp" />
-    						
+    							<!--<% response.sendRedirect("github.jsp?count="+count);%>-->?
 
 
     							 

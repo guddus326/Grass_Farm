@@ -7,7 +7,6 @@
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import = "java.util.Calendar" %>
-
 <!doctype html>
 <html>
 <head>
@@ -42,8 +41,8 @@
   			BbsDAO bbsDAO=new BbsDAO();
 			ArrayList<User> user=userDAO.user((String)session.getAttribute("userID"));
 			int count=bbsDAO.getCount((String)session.getAttribute("userID"));
-			%>  
-			
+			int monthcount=bbsDAO.getmonthCount((String)session.getAttribute("userID"), String.valueOf((cal.get(Calendar.MONTH)+1)));
+			int count=Integer.parseInt(request.getParameter("count"));%>  
     <div class="container">
         <div class="col-md-12">
             <div id="heatmap-1"></div>

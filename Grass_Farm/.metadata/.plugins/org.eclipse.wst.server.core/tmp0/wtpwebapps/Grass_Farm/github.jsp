@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+    <%@ page import="user.UserDAO" %>
+<%@ page import="user.User" %>
+<%@ page import="bbs.BbsDAO" %>
+<%@ page import="bbs.Bbs" %>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import = "java.util.Calendar" %>
+
 <!doctype html>
 <html>
 <head>
@@ -27,7 +35,15 @@
 </head>
 
 <body>
-<% int count=Integer.parseInt(request.getParameter("count"));%>  
+
+			<% 
+  			Calendar cal = Calendar.getInstance();
+ 			UserDAO userDAO=new UserDAO();
+  			BbsDAO bbsDAO=new BbsDAO();
+			ArrayList<User> user=userDAO.user((String)session.getAttribute("userID"));
+			int count=bbsDAO.getCount((String)session.getAttribute("userID"));
+			%>  
+			
     <div class="container">
         <div class="col-md-12">
             <div id="heatmap-1"></div>

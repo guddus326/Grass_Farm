@@ -37,12 +37,7 @@
 <body>
 
 			<% 
-  			Calendar cal = Calendar.getInstance();
- 			UserDAO userDAO=new UserDAO();
-  			BbsDAO bbsDAO=new BbsDAO();
-			ArrayList<User> user=userDAO.user((String)session.getAttribute("userID"));
-			int count=bbsDAO.getCount((String)session.getAttribute("userID"));
-			%>  
+			int count=Integer.parseInt(request.getParameter("count"));%>  
 			
     <div class="container">
         <div class="col-md-12">
