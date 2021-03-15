@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.mysql.jdbc.Statement;
 
@@ -203,6 +204,25 @@ public class BbsDAO {
 		
 	}
 	return resultCount;
+		
+	}
+	
+	public List<String> getalldate(String userId) {
+		String SQL="select * from bbs where userID=?;";
+		List<String> resultCount = new ArrayList<String>();
+		try {
+			pstmt = conn.prepareStatement(SQL);   
+			pstmt.setString(1, userId);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				resultCount.add(rs.getString(4));
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		
+		return resultCount;
 		
 	}
 	

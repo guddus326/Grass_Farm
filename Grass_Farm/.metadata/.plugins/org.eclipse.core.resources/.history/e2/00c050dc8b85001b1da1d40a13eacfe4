@@ -1,0 +1,58 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta
+        http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- 뷰포트 -->
+        <meta
+        name="viewport" content="width=device-width" initial-scale="1">
+        <!-- 스타일시트 참조  -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="shortcut icon" href="grass_removebg_preview_wIP_icon.ico" type="image/x-icon">
+		<link rel="icon" href="grass_removebg_preview_wIP_icon.ico" type="image/x-icon">
+       
+        <title>잔디공작소</title>
+        <style>
+      	div {
+        width: 100%;
+        height: 500px;
+        border: 1px solid #003458;
+      }
+      div.left {
+        width: 30%;
+        float: left;
+        box-sizing: border-box;
+        background: #8977ad;
+      }
+      div.right {
+        width: 70%;
+        float: right;
+        box-sizing: border-box;
+        background: #ece6cc;
+      }
+        
+		</style>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/hybrid.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+
+    <div>
+      <div class="left">
+        왼쪽
+      </div>
+      <div class="right">
+        오른쪽
+      </div>
+    </div>
+        <!-- 애니매이션 담당 JQUERY -->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <!-- 부트스트랩 JS  -->
+        <script src="js/bootstrap.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> <!-- activate highlight.js --> <script>hljs.initHighlightingOnLoad();</script>
+		<script src="js/highlight.pack.js"></script>  
+    </body>
+</html>
