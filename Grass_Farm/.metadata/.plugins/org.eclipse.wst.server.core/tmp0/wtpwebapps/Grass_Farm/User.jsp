@@ -49,12 +49,12 @@
     <body>
    		
   			<% 
-  			Calendar cal = Calendar.getInstance();
- 			UserDAO userDAO=new UserDAO();
-  			BbsDAO bbsDAO=new BbsDAO();
-			ArrayList<User> user=userDAO.user((String)session.getAttribute("userID"));
-			int count=bbsDAO.getCount((String)session.getAttribute("userID"));
-			int monthcount=bbsDAO.getmonthCount((String)session.getAttribute("userID"), String.valueOf((cal.get(Calendar.MONTH)+1)));
+  				Calendar cal = Calendar.getInstance();
+ 				UserDAO userDAO=new UserDAO();
+  				BbsDAO bbsDAO=new BbsDAO();
+				ArrayList<User> user=userDAO.user((String)session.getAttribute("userID"));
+				int count=bbsDAO.getCount((String)session.getAttribute("userID"));
+				int monthcount=bbsDAO.getmonthCount((String)session.getAttribute("userID"), String.valueOf((cal.get(Calendar.MONTH)+1)));
 			%>
 			
   			 <div class="container">

@@ -44,7 +44,10 @@
 			ArrayList<User> user=userDAO.user((String)session.getAttribute("userID"));
 			int count=bbsDAO.getCount((String)session.getAttribute("userID"));
 			List<String> date=bbsDAO.getalldate((String)session.getAttribute("userID"));
-			
+			System.out.println(date.size());
+			for(int i=0;i<date.size();i++){
+				System.out.println(date.get(i));
+			}
 			%>  
 			
     <div class="container">

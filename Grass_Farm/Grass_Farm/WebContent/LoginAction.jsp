@@ -20,7 +20,7 @@
 			PrintWriter script=response.getWriter();
 			session.setAttribute("userID", user.getUserID());
 			script.println("<script>");
-			script.println("location.href='Index.jsp'");
+			script.println("location.href='main.jsp'");
 			script.println("</script>");
 		}
 		if(result==0){
