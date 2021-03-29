@@ -208,15 +208,17 @@ public class BbsDAO {
 	}
 	
 	public List<String> getalldate(String userId) {
-		String SQL="select * from bbs where userID=?;";
+		String SQL="select bbsdate from bbs where userID=?;";
 		List<String> resultCount = new ArrayList<String>();
 		try {
 			pstmt = conn.prepareStatement(SQL);   
 			pstmt.setString(1, userId);
 			rs=pstmt.executeQuery();
-			if(rs.next()){
-				resultCount.add(rs.getString(4));
+			while(rs.next()){
+				resultCount.add(rs.getString(1));
 			}
+			
+                 
 		}catch(Exception e) {
 			e.printStackTrace();
 			

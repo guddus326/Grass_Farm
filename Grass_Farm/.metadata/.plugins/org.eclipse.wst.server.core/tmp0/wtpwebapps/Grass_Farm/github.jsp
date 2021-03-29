@@ -1,3 +1,4 @@
+<%@page import="java.text.Format"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
     <%@ page import="user.UserDAO" %>
@@ -8,6 +9,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import = "java.util.Calendar" %>
 <%@ page import = "java.util.List" %>
+<%@ page import = "java.text.SimpleDateFormat"%>
 
 <!doctype html>
 <html>
@@ -33,22 +35,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
     <script src="dist/jquery.calmosaic.min.js"></script>
+    
 </head>
 
 <body>
-
-			<% 
-  			Calendar cal = Calendar.getInstance();
- 			UserDAO userDAO=new UserDAO();
-  			BbsDAO bbsDAO=new BbsDAO();
-			ArrayList<User> user=userDAO.user((String)session.getAttribute("userID"));
-			int count=bbsDAO.getCount((String)session.getAttribute("userID"));
-			List<String> date=bbsDAO.getalldate((String)session.getAttribute("userID"));
-			System.out.println(date.size());
-			for(int i=0;i<date.size();i++){
-				System.out.println(date.get(i));
-			}
-			%>  
+		
 			
     <div class="container">
         <div class="col-md-12">
@@ -56,39 +47,38 @@
         </div>
     </div>
     <script>
-   
-        function randomDate(start, end) {
-            var date = new Date(+start + Math.random() * (end - start));
-            return moment(date).format('YYYY-MM-DD');
-        }
+	<% 
+		Calendar cal = Calendar.getInstance();
+		UserDAO userDAO=new UserDAO();
+		BbsDAO bbsDAO=new BbsDAO();
+		ArrayList<User> user=userDAO.user((String)session.getAttribute("userID"));
+		int count=bbsDAO.getCount((String)session.getAttribute("userID"));
+		List<String> date=bbsDAO.getalldate((String)session.getAttribute("userID"));
+		
+		System.out.println(count);
+		for(int i=0;i<count;i++){
+			System.out.println(date.get(i).substring(0, 10));
+	%>
+    		var data = [{count: 2, date: "2020-09-23"},{count: 2, date: "2020-09-24"}];
+    <%
+    }
+    %>
+    
+    $("#heatmap-1").calmosaic(data, {
 
-        var events = <%=count%>;
-        var data = [];
-        for (var i = 0; i < events; i++) {
-            data.push({
-                count: parseInt((Math.random() * 200).toFixed(0)),
-                date: randomDate(moment().subtract(1, 'year').subtract(5, 'months').format('x'), moment()
-                    .format('x'))
-            });
-        }
-
-
-        $("#heatmap-1").calmosaic(data, {
-          
-            lastMonth: moment().month(),
-            coloring: "",
-            legend: {
-                minLabel: "Fewer"
-            },
-            labels: {
-                custom: {
-                    monthLabels: "MMM"
-                }
+        lastMonth: moment().month()+1,
+        coloring: "",
+        legend: {
+            minLabel: "Fewer"
+        },
+        labels: {
+            custom: {
+                monthLabels: "MMM"
             }
-        });
+        }
+    });
 
-        
-    </script>
+</script>
 </body>
-
+ 
 </html>

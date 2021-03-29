@@ -37,7 +37,7 @@
     	<div class="container-fluid">
     		
 			<div class="navbar-header">
-            	<p id="jandi"><a href="Index.jsp" style="text-decoration:none; color:black;">🌱잔디공작소🌱</a><p>           
+        		<img alt="Brand" src="image/잔디공작소 logo.png">
 			</div>
           	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       			<ul class="nav navbar-nav">
