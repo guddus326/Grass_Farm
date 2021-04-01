@@ -46,7 +46,9 @@
             <div id="heatmap-1"></div>
         </div>
     </div>
-    <script>
+    <script language=javascript>
+    var data=[];
+    
 	<% 
 		Calendar cal = Calendar.getInstance();
 		UserDAO userDAO=new UserDAO();
@@ -54,16 +56,18 @@
 		ArrayList<User> user=userDAO.user((String)session.getAttribute("userID"));
 		int count=bbsDAO.getCount((String)session.getAttribute("userID"));
 		List<String> date=bbsDAO.getalldate((String)session.getAttribute("userID"));
-		
 		System.out.println(count);
-		for(int i=0;i<count;i++){
-			System.out.println(date.get(i).substring(0, 10));
+		for (int i = 0; i <count; i++) {
 	%>
-    		var data = [{count: 2, date: "2020-09-23"},{count: 2, date: "2020-09-24"}];
-    <%
-    }
-    %>
-    
+		<%System.out.println(date.get(i).substring(0, 10).toString());%>
+		data.push({count:2, date:"<%=date.get(i).substring(0, 10).toString()%>"});      
+	<%
+	}
+	%>
+	
+<%-- 	for (var i = 0; i <<%=count%>; i++) {
+    	document.write(data[i])
+	} --%>
     $("#heatmap-1").calmosaic(data, {
 
         lastMonth: moment().month()+1,
